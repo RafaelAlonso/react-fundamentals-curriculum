@@ -11,7 +11,7 @@ export default class Banner extends React.Component{
 		return (
 			<div className="wrapper" style={this.props.style}>
 				<h1 className="text-center">Check the Forecast of your city!</h1>
-				<WeatherForm />
+				<WeatherForm direction='column'/>
 			</div>
 		)
 	}

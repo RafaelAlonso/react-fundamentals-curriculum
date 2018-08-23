@@ -1,17 +1,40 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { Link } from 'react-router-dom';
 
 export default class WeatherForm extends React.Component{
+	state = {
+		city: ''
+	}
+
+	onChange = (event) => {
+		const city = event.target.value;
+		return this.setState(() => ({ city: city }))
+	}
+
 	render(){
 		return (
-			<form action="#" className="formcast">
-				<div className="form-container">
-					<input type="text" className="form-control" placeholder="São Paulo, SP"/>
+			<div className="formcast" style={{flexDirection: this.props.direction}}>
+				<div className="formcast-input">
+					<input 
+						type="text" 
+						className="form-control" 
+						placeholder="São Paulo, SP" 
+						onKeyUp={this.onChange}
+					/>
 				</div>
-				<div className="form-container">
-					<input type="submit" value="Check the forecast!" className="btn btn-success"/>
+				<div className="formcast-input">
+					<Link 
+						className="btn btn-success"
+						to={{
+							pathname: '/results',
+							search: '?city=' + this.state.city 
+						}}
+					>
+						Check the forecast!
+					</Link>
 				</div>
-			</form>
+			</div>
 		)
 	}
 }

@@ -6,13 +6,17 @@ body {
 #header {
 	width: 100vw;
 	height: 10vh;
+	padding: 15px;
 	display: flex;
 	align-items: center;
+	background-color: #FC6C43;
+	justify-content: space-between;
 }
 
 #header h1 {
 	font-weight: 400;
 	margin: 0;
+	color: white;
 }
 
 .wrapper {
@@ -30,9 +34,12 @@ body {
 }
 
 .formcast {
-	text-align: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0;
 }
 
-.form-container{
-	margin-top: 10px;
+.formcast-input {
+	margin: 5px;
 }
